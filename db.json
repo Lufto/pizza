@@ -1,0 +1,246 @@
+{
+  "cart": [
+    {
+    "id": "0",
+    "imageUrl": "https://media.dodostatic.net/image/r:233x233/11EE7D612FC7B7FCA5BE822752BEE1E5.avif",
+    "name": "Пепперони Фреш с перцем",
+    "types": "традиционное",
+    "sizes": 26,
+    "price": 803,
+    "curent": 2
+  },
+  {
+    "id": "1",
+    "imageUrl": "https://media.dodostatic.net/image/r:233x233/11EE7D610D2925109AB2E1C92CC5383C.avif",
+    "name": "Сырная",
+    "types": "традиционное",
+    "sizes": 26,
+    "price": 803,
+    "curent": 2
+  },
+  {
+    "id": "2",
+    "imageUrl": "https://media.dodostatic.net/image/r:233x233/11EE7D60FDA22358AC33C6A44EB093A2.avif",
+    "name": "Цыпленок барбекю",
+    "types": "традиционное",
+    "sizes": 26,
+    "price": 803,
+    "curent": 2
+  },
+  {
+    "id": "3",
+    "imageUrl": "https://media.dodostatic.net/image/r:292x292/11EE7D6108E3A1C9952CD3A7F39A4D02.avif",
+    "name": "Кисло-сладкий цыпленок",
+    "types": "традиционное",
+    "sizes": 26,
+    "price": 803,
+    "curent": 2
+  }
+],
+  "pizzas": [
+    {
+      "id": "0",
+      "imageUrl": "https://media.dodostatic.net/image/r:233x233/11EE7D612FC7B7FCA5BE822752BEE1E5.avif",
+      "name": "Пепперони Фреш с перцем",
+      "types": [
+        "тонкое",
+        "традиционное"
+      ],
+      "sizes": [
+        26,
+        30,
+        40
+      ],
+      "price": 803,
+      "category": "Мясные",
+      "rating": 4
+    },
+    {
+      "id": "1",
+      "imageUrl": "https://media.dodostatic.net/image/r:233x233/11EE7D610D2925109AB2E1C92CC5383C.avif",
+      "name": "Сырная",
+      "types": [
+        "тонкое"
+      ],
+      "sizes": [
+        26,
+        40
+      ],
+      "price": 245,
+      "category": "Вегетарианская",
+      "rating": 6
+    },
+    {
+      "id": "2",
+      "imageUrl": "https://media.dodostatic.net/image/r:233x233/11EE7D60FDA22358AC33C6A44EB093A2.avif",
+      "name": "Цыпленок барбекю",
+      "types": [
+        "традиционное"
+      ],
+      "sizes": [
+        26,
+        40
+      ],
+      "price": 295,
+      "category": "Гриль",
+      "rating": 4
+    },
+    {
+      "id": "3",
+      "imageUrl": "https://media.dodostatic.net/image/r:292x292/11EE7D6108E3A1C9952CD3A7F39A4D02.avif",
+      "name": "Кисло-сладкий цыпленок",
+      "types": [
+        "традиционное"
+      ],
+      "sizes": [
+        26,
+        30,
+        40
+      ],
+      "price": 275,
+      "category": "Гриль",
+      "rating": 2
+    },
+    {
+      "id": "4",
+      "imageUrl": "https://media.dodostatic.net/image/r:233x233/11EE7D610A62D78598406363A9A8AD65.avif",
+      "name": "Чизбургер-пицца",
+      "types": [
+        "тонкое",
+        "традиционное"
+      ],
+      "sizes": [
+        26,
+        30,
+        40
+      ],
+      "price": 415,
+      "category": "Острые",
+      "rating": 8
+    },
+    {
+      "id": "5",
+      "imageUrl": "https://media.dodostatic.net/image/r:233x233/11EE7D61546D8483A61A0BBAA7ADCC78.avif",
+      "name": "Крэйзи пепперони",
+      "types": [
+        "тонкое",
+        "традиционное"
+      ],
+      "sizes": [
+        30,
+        40
+      ],
+      "price": 580,
+      "category": "Мясные",
+      "rating": 2
+    },
+    {
+      "id": "6",
+      "imageUrl": "https://media.dodostatic.net/image/r:233x233/11EE7D6150D498419E133DF19945A00D.avif",
+      "name": "Пепперони",
+      "types": [
+        "тонкое",
+        "традиционное"
+      ],
+      "sizes": [
+        26,
+        30,
+        40
+      ],
+      "price": 675,
+      "category": "Мясные",
+      "rating": 9
+    },
+    {
+      "id": "7",
+      "imageUrl": "https://media.dodostatic.net/image/r:292x292/11EE7D613B84A5DBB4C1C50FB9583B7E.avif",
+      "name": "Маргарита",
+      "types": [
+        "тонкое",
+        "традиционное"
+      ],
+      "sizes": [
+        26,
+        30,
+        40
+      ],
+      "price": 450,
+      "category": "Закрытые",
+      "rating": 10
+    },
+    {
+      "id": "8",
+      "imageUrl": "https://media.dodostatic.net/image/r:233x233/11EE7D6175C10773BFE36E56D48DF7E3.avif",
+      "name": "Четыре сезона",
+      "types": [
+        "тонкое",
+        "традиционное"
+      ],
+      "sizes": [
+        26,
+        30,
+        40
+      ],
+      "price": 395,
+      "category": "Закрытые",
+      "rating": 10
+    },
+    {
+      "id": "9",
+      "imageUrl": "https://media.dodostatic.net/image/r:292x292/11EEE24316D49CCFA979EBAB4534A60D.avif",
+      "name": "Овощи и грибы 🌱",
+      "types": [
+        "тонкое",
+        "традиционное"
+      ],
+      "sizes": [
+        26,
+        30,
+        40
+      ],
+      "price": 285,
+      "category": "Вегетарианская",
+      "rating": 7
+    }
+  ],
+  "categoryes": [
+    {
+      "id": "fire",
+      "name": "Все"
+    },
+    {
+      "id": "meat",
+      "name": "Мясные"
+    },
+    {
+      "id": "vegetarian",
+      "name": "Вегетарианская"
+    },
+    {
+      "id": "grill",
+      "name": "Гриль"
+    },
+    {
+      "id": "spicy",
+      "name": "Острые"
+    },
+    {
+      "id": "closed",
+      "name": "Закрытые"
+    }
+  ],
+  "sort": [
+    {
+      "id": "popularity",
+      "name": "популярности"
+    },
+    {
+      "id": "price",
+      "name": "цене"
+    },
+    {
+      "id": "alphabet",
+      "name": "алфавиту"
+    }
+  ]
+}
