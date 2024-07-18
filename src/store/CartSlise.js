@@ -25,19 +25,19 @@ export const deleteCart = createAsyncThunk(
     }
 )
 
-export const deleteCarts = createAsyncThunk(
-    'cart/deleteCarts',
-    () => {
+export const addCreateCard = createAsyncThunk(
+    'cart/createCart',
+    (obj) => {
         const {request} = useHttp();
-        return request(`http://localhost:3000/cart/`, "DELETE")
+        return request(`http://localhost:3000/cart`, "POST", JSON.stringify(obj))
     }
 )
 
-export const createCart = createAsyncThunk(
-    'cart/createCart',
-    () => {
+export const editCreateCard = createAsyncThunk(
+    'cart/editCart',
+    ({id, obj}) => {
         const {request} = useHttp();
-        return request(`http://localhost:3000/cart`, "POST")
+        return request(`http://localhost:3000/cart/${id}`, "PATCH", JSON.stringify(obj))
     }
 )
 
@@ -53,29 +53,21 @@ const cartSlise = createSlice({
             .addCase(fetchCart.fulfilled, (state, action) => {
                 state.cartLoadingStatus = 'idle';
                 state.cartElements = action.payload;
-                state.cartCurentItems = state.cartElements.length;
-                // state.cartAllSum = () => {
-                //     let sum = 0
-                //     state.cartElements.forEach(item => sum += item.price)
-                //     return sum
-                // }
+                state.cartCurentItems = state.cartElements.reduce((accumulator, item) => accumulator + item.curent, 0);
+                state.cartAllSum = state.cartElements.reduce((accumulator, item) => accumulator + item.price * item.curent, 0)
             })
             .addCase(fetchCart.rejected, state => {state.pizza.cartLoadingStatus = 'error'})
 
-
-            
             .addCase(deleteCart.fulfilled, (state, action) => {
                 state.cartElements = state.cartElements.filter(item => item.id !== action.payload);
             })
 
-            .addCase(deleteCarts.fulfilled, (state) => {
-                state.cartElements = [];
-                state.cartCurentItems = 0;
-                state.cartAllSum = 0;
+            .addCase(addCreateCard.fulfilled, (state, action) => {
+                state.cartElements = [...state.cartElements, action.payload];
             })
 
-            .addCase(createCart.fulfilled, (state, action) => {
-                state.cartElements = state.cartElements.push[action.payload];
+            .addCase(editCreateCard.fulfilled, (state, action) => {
+                state.cartElements = state.cartElements.map(item => item.id = action.payload.id ? action.payload : action.payload);
             })
 
             .addDefaultCase(() => {})

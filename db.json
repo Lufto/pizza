@@ -1,42 +1,5 @@
 {
-  "cart": [
-    {
-    "id": "0",
-    "imageUrl": "https://media.dodostatic.net/image/r:233x233/11EE7D612FC7B7FCA5BE822752BEE1E5.avif",
-    "name": "Пепперони Фреш с перцем",
-    "types": "традиционное",
-    "sizes": 26,
-    "price": 803,
-    "curent": 2
-  },
-  {
-    "id": "1",
-    "imageUrl": "https://media.dodostatic.net/image/r:233x233/11EE7D610D2925109AB2E1C92CC5383C.avif",
-    "name": "Сырная",
-    "types": "традиционное",
-    "sizes": 26,
-    "price": 803,
-    "curent": 2
-  },
-  {
-    "id": "2",
-    "imageUrl": "https://media.dodostatic.net/image/r:233x233/11EE7D60FDA22358AC33C6A44EB093A2.avif",
-    "name": "Цыпленок барбекю",
-    "types": "традиционное",
-    "sizes": 26,
-    "price": 803,
-    "curent": 2
-  },
-  {
-    "id": "3",
-    "imageUrl": "https://media.dodostatic.net/image/r:292x292/11EE7D6108E3A1C9952CD3A7F39A4D02.avif",
-    "name": "Кисло-сладкий цыпленок",
-    "types": "традиционное",
-    "sizes": 26,
-    "price": 803,
-    "curent": 2
-  }
-],
+  "cart": [],
   "pizzas": [
     {
       "id": "0",

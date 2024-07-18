@@ -14,7 +14,7 @@ const CartPage = () => {
 
     useEffect(() => {
         dispatch(fetchCart())
-
+        
         // eslint-disable-next-line
     }, [])
 

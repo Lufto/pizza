@@ -4,11 +4,12 @@ import { fetchPizzas, pizzaSortElements } from "../../store/PizzaSlise"
 import { fetchCart } from "../../store/CartSlise"
 import { useDispatch, useSelector } from "react-redux"
 import { useEffect } from "react"
+import { addCreateCard, editCreateCard } from "../../store/CartSlise"
 
 const Pizza = () => {
     const dispatch = useDispatch()
 
-    // const cartElement = useSelector(state => state.cart.cartElements)
+    const cartElement = useSelector(state => state.cart.cartElements)
 
     useEffect(() => {
         dispatch(fetchPizzas())
@@ -19,33 +20,28 @@ const Pizza = () => {
 
     const pizzaElement = useSelector(pizzaSortElements)
 
-    const createCart = (obj, id) => {
-        obj.id = id
+    const createCard = (obj, id) => {
 
-        dispatch(createCart(obj))
+        if(obj.curent > 1){
+            dispatch(editCreateCard({id, obj}))
+        } else {
+            obj.id = id
+            dispatch(addCreateCard(obj)) 
+        }
     }
-
-    // const [currentPizzaCart, setCurrentPizzaCart] = useState(0)
-    // const cartElement = useSelector(state => state.cart.cartElements)
-
-    // const currentPizza = (name) => {cartElement.forEach(item => {
-    //         if(item.id === name) {
-    //             setCurrentPizzaCart(item.curent)
-    //         }
-    //     })
-    // }
-    // currentPizza()
 
 
     const pizza = (arr) => {
         return arr.map(({id, ...props}) => {
+            const param = cartElement.find(e => e.id == id)
             return (
-                <PizzaCard 
-                    createCart={(newItemCart) => createCart(newItemCart, id)}
-                    key={id}
-                    {...props}           
-                />
-            )
+                        <PizzaCard 
+                            createCart={(newItemCard) => createCard(newItemCard, id)}
+                            key={id}
+                            {...props}
+                            curent={param?.curent}
+                        />
+                    )
         })
     }
 

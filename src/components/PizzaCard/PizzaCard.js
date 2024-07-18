@@ -3,23 +3,25 @@ import Button from '../Button/Button'
 import classNames from 'classnames'
 
 const PizzaCard = (props) => {
-    const { id, name, types, imageUrl, sizes, price, createCart } = props
+    const { id, name, types, imageUrl, sizes, price, createCart, curent } = props
     const [activeRadius, setActiveRadius] = useState(sizes[0])
     const [activeVariable, setActiveVariable] = useState(types[0])
-    const [currentPizzaCart, setCurrentPizzaCart] = useState(0)
-
-    let newItemCart = {
-        id: id,
-        name,
-        price,
-        types: activeVariable,
-        sizes: activeRadius,
-        curent: currentPizzaCart + 1
-    }
+    const [curentPizzaCart, setCurentPizzaCart] = useState(curent || 0)
 
     const renderNewItem = () => {
-        setCurrentPizzaCart(currentPizzaCart + 1); 
-        createCart(newItemCart)}
+        const newItemCart = {
+            id: id,
+            imageUrl,
+            name,
+            price,
+            types: activeVariable,
+            sizes: activeRadius,
+            curent: curentPizzaCart + 1
+        }
+
+        setCurentPizzaCart(curentPizzaCart + 1); 
+        createCart(newItemCart)
+    }
 
     return (
         <div className="pizza-block">
@@ -71,8 +73,8 @@ const PizzaCard = (props) => {
                     </svg>
                     <span>Добавить</span>
                     <i className={classNames({
-                        'i-d-none': currentPizzaCart === 0
-                    })}>{currentPizzaCart !== 0 ? currentPizzaCart : 0}</i>
+                        'i-d-none': curentPizzaCart === 0
+                    })}>{curentPizzaCart !== 0 ? curentPizzaCart : 0}</i>
                 </Button>
             </div>
         </div>
