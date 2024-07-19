@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import CartCard from "../cartCard/cartCard"
 import { useDispatch, useSelector } from "react-redux"
-import { deleteCart, deleteCarts } from "../../store/CartSlise"
+import { deleteCart, editCreateCard } from "../../store/CartSlise"
 
 const Cart = ({cartElement}) => {
 
@@ -17,13 +17,26 @@ const Cart = ({cartElement}) => {
   const onClerMany = () => {
     const arr = cartElement.map(item => item.id)
     arr.forEach(id => dispatch(deleteCart(id)))
-    
+  }
+
+  const inc = (id, obj) => {
+    dispatch(editCreateCard({id, obj}))
+  }
+
+  const dec = (id, obj) => {
+    dispatch(editCreateCard({id, obj}))
   }
 
   const createItems = (app) => {
     return app.map(({id, ...props}) => {
       return (
-        <CartCard key={id} {...props} onCler={() => onCler(id)}/>
+        <CartCard 
+        key={id} 
+        {...props} 
+        onCler={() => onCler(id)} 
+        inc={(obj) => inc(id, obj)} 
+        dec={(obj) => dec(id, obj)}
+        />
       )
     })
   }

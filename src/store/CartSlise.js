@@ -67,7 +67,7 @@ const cartSlise = createSlice({
             })
 
             .addCase(editCreateCard.fulfilled, (state, action) => {
-                state.cartElements = state.cartElements.map(item => item.id = action.payload.id ? action.payload : action.payload);
+                state.cartElements = state.cartElements.map(item => item.id = action.payload.id ? action.payload : item);
             })
 
             .addDefaultCase(() => {})
