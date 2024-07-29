@@ -1,13 +1,13 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { configureStore } from '@reduxjs/toolkit'
 
-import pizza from './PizzaSlise'
-import filters from './FilterSlise'
 import cart from './CartSlise'
+import filters from './FilterSlise'
+import pizza from './PizzaSlise'
 
 const store = configureStore({
-    reducer: {pizza, filters, cart},
-    middleware: getDefualtMiddleware => getDefualtMiddleware(),
-    devTools: process.env.NODE_ENV !== 'production',
+	reducer: { pizza, filters, cart },
+	middleware: getDefualtMiddleware => getDefualtMiddleware(),
+	devTools: process.env.NODE_ENV !== 'production',
 })
 
-export default store;
+export default store
