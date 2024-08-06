@@ -1,32 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { useHttp } from '../api/http.hook'
-
-export type curentObj = {
-	curent: number
-}
-
-export type editCardType = {
-	id: string
-	curent: curentObj
-}
-
-export type cartItem = {
-	id: string
-	imageUrl: string
-	name: string
-	types: string
-	sizes: number
-	price: number
-	rating?: number
-	curent: number
-}
-
-type initialStateCart = {
-	cartElements: cartItem[]
-	cartLoadingStatus: string
-	cartCurentItems: number
-	cartAllSum: number
-}
+import { cartItem, editCardType, initialStateCart } from './@typeSlise'
 
 const initialState: initialStateCart = {
 	cartElements: [],

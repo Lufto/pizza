@@ -5,22 +5,9 @@ import {
 	PayloadAction,
 } from '@reduxjs/toolkit'
 import { useHttp } from '../api/http.hook'
+import { initialStateElements, pizzaElementsType } from './@typeSlise'
 
-export type pizzaElementsType = {
-	id: string
-	imageUrl: string
-	name: string
-	types: string[]
-	sizes: number[]
-	price: number
-	category: string
-	rating: number
-}
 
-type initialStateElements = {
-	pizzaElements: pizzaElementsType[]
-	pizzaLoadingStatus: string
-}
 
 const initialState: initialStateElements = {
 	pizzaElements: [],

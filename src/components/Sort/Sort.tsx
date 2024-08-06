@@ -7,8 +7,8 @@ import {
 	changeSort,
 	fetchFilters,
 	fetchSort,
-	FiltersType,
 } from '../../store/FilterSlise'
+import { FiltersType } from '../../store/@typeSlise'
 
 const Sort = () => {
 	const dispatch = useAppDispatch()

@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 import React, { useState } from 'react'
-import { cartItem, curentObj } from '../../store/CartSlise'
+import { cartItem, curentObj } from '../../store/@typeSlise'
 import Button from '../Button/Button'
 
 type PizzaCardProps = {

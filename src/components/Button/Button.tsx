@@ -3,7 +3,7 @@ import classNames from 'classnames'
 type ButtonProp = {
 	onClick: () => void
 	outline: boolean
-	children: any
+	children: React.ReactNode
 }
 
 const Button: React.FC<ButtonProp> = ({ onClick, outline, children }) => {

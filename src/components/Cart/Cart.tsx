@@ -2,12 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../../store'
 import {
-	cartItem,
-	curentObj,
 	deleteCart,
 	editCreateCard,
 } from '../../store/CartSlise'
 import CartCard from '../cartCard/cartCard'
+import { cartItem, curentObj } from '../../store/@typeSlise'
 
 type CartProp = {
 	cartElement: cartItem[]

@@ -2,16 +2,14 @@ import PizzaCard from '../PizzaCard/PizzaCard'
 
 import { useEffect } from 'react'
 import { useAppDispatch, useAppSelector } from '../../store'
+import { cartItem, curentObj, pizzaElementsType } from '../../store/@typeSlise'
 import {
 	addCreateCard,
-	cartItem,
-	curentObj,
 	editCreateCard,
 	fetchCart,
 } from '../../store/CartSlise'
 import {
 	fetchPizzas,
-	pizzaElementsType,
 	pizzaSortElements,
 } from '../../store/PizzaSlise'
 

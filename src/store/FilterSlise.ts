@@ -1,17 +1,8 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { useHttp } from '../api/http.hook'
+import { initialStateFilter } from './@typeSlise'
 
-export type FiltersType = {
-	id: string
-	name: string
-}
 
-type initialStateFilter = {
-	categoryesFilters: FiltersType[]
-	sortFilters: FiltersType[]
-	activeCategoryes: string
-	activeSort: string
-}
 
 const initialState: initialStateFilter = {
 	categoryesFilters: [],

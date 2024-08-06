@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { curentObj } from '../../store/CartSlise'
+import { curentObj } from '../../store/@typeSlise'
 
 type CartCardProps = {
 	name: string
