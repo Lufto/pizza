@@ -1,13 +1,13 @@
 {
   "cart": [
     {
-      "id": "0",
-      "imageUrl": "https://media.dodostatic.net/image/r:233x233/11EE7D612FC7B7FCA5BE822752BEE1E5.avif",
-      "name": "Пепперони Фреш с перцем",
-      "price": 803,
-      "types": "тонкое",
+      "id": "3",
+      "imageUrl": "https://media.dodostatic.net/image/r:292x292/11EE7D6108E3A1C9952CD3A7F39A4D02.avif",
+      "name": "Кисло-сладкий цыпленок",
+      "price": 275,
+      "types": "традиционное",
       "sizes": 26,
-      "curent": 3
+      "curent": 4
     },
     {
       "id": "5",
@@ -16,24 +16,6 @@
       "price": 580,
       "types": "тонкое",
       "sizes": 30,
-      "curent": 1
-    },
-    {
-      "id": "1",
-      "imageUrl": "https://media.dodostatic.net/image/r:233x233/11EE7D610D2925109AB2E1C92CC5383C.avif",
-      "name": "Сырная",
-      "price": 245,
-      "types": "тонкое",
-      "sizes": 26,
-      "curent": 3
-    },
-    {
-      "id": "3",
-      "imageUrl": "https://media.dodostatic.net/image/r:292x292/11EE7D6108E3A1C9952CD3A7F39A4D02.avif",
-      "name": "Кисло-сладкий цыпленок",
-      "price": 275,
-      "types": "традиционное",
-      "sizes": 40,
       "curent": 3
     }
   ],

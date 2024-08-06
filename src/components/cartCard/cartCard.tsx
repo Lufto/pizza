@@ -1,6 +1,19 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
+import { curentObj } from '../../store/CartSlise'
 
-const CartCard = ({
+type CartCardProps = {
+	name: string
+	types: string
+	imageUrl: string
+	sizes: number
+	price: number
+	onCler: () => void
+	curent: number
+	inc: (curent: curentObj) => void
+	dec: (curent: curentObj) => void
+}
+
+const CartCard: React.FC<CartCardProps> = ({
 	imageUrl,
 	name,
 	types,
@@ -32,7 +45,9 @@ const CartCard = ({
 				<div
 					className="button button--outline button--circle cart__item-count-minus"
 					onClick={() =>
-						dec({ curent: curent === 1 ? curent : curent - 1 })
+						dec({
+							curent: curent === 1 ? curent : curent - 1,
+						})
 					}
 				>
 					<svg

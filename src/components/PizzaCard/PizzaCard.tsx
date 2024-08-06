@@ -1,17 +1,36 @@
 import classNames from 'classnames'
-import { useState } from 'react'
+import React, { useState } from 'react'
+import { cartItem, curentObj } from '../../store/CartSlise'
 import Button from '../Button/Button'
 
-const PizzaCard = props => {
-	const { id, name, types, imageUrl, sizes, price, createCart, curent } =
-		props
+type PizzaCardProps = {
+	id: string
+	name: string
+	types: string[]
+	imageUrl: string
+	sizes: number[]
+	price: number
+	createCard: (obj: cartItem, curent: curentObj) => void
+	curent?: number
+}
+
+const PizzaCard: React.FC<PizzaCardProps> = ({
+	id,
+	name,
+	types,
+	imageUrl,
+	sizes,
+	price,
+	createCard,
+	curent,
+}) => {
 	const [activeRadius, setActiveRadius] = useState(sizes[0])
 	const [activeVariable, setActiveVariable] = useState(types[0])
 	const [curentPizzaCart, setCurentPizzaCart] = useState(curent || 0)
 
 	const renderNewItem = () => {
-		const newItemCart = {
-			id: id,
+		const newItemCart: cartItem = {
+			id,
 			imageUrl,
 			name,
 			price,
@@ -21,7 +40,8 @@ const PizzaCard = props => {
 		}
 
 		setCurentPizzaCart(curentPizzaCart + 1)
-		createCart(newItemCart)
+		const curentObj = { curent: curentPizzaCart + 1 }
+		createCard(newItemCart, curentObj)
 	}
 
 	return (

@@ -1,8 +1,8 @@
 export const useHttp = () => {
 	const request = async (
-		url,
+		url: string,
 		method = 'GET',
-		body = null,
+		body: string | null = null,
 		headers = { 'Content-Type': 'application/json' }
 	) => {
 		try {

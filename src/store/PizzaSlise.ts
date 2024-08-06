@@ -1,7 +1,28 @@
-import { createAsyncThunk, createSelector, createSlice } from '@reduxjs/toolkit'
+import {
+	createAsyncThunk,
+	createSelector,
+	createSlice,
+	PayloadAction,
+} from '@reduxjs/toolkit'
 import { useHttp } from '../api/http.hook'
 
-const initialState = {
+export type pizzaElementsType = {
+	id: string
+	imageUrl: string
+	name: string
+	types: string[]
+	sizes: number[]
+	price: number
+	category: string
+	rating: number
+}
+
+type initialStateElements = {
+	pizzaElements: pizzaElementsType[]
+	pizzaLoadingStatus: string
+}
+
+const initialState: initialStateElements = {
 	pizzaElements: [],
 	pizzaLoadingStatus: 'idle',
 }
@@ -20,12 +41,15 @@ const pizzaSlise = createSlice({
 			.addCase(fetchPizzas.pending, state => {
 				state.pizzaLoadingStatus = 'loading'
 			})
-			.addCase(fetchPizzas.fulfilled, (state, action) => {
-				state.pizzaLoadingStatus = 'idle'
-				state.pizzaElements = action.payload
-			})
+			.addCase(
+				fetchPizzas.fulfilled,
+				(state, action: PayloadAction<pizzaElementsType[]>) => {
+					state.pizzaLoadingStatus = 'idle'
+					state.pizzaElements = action.payload
+				}
+			)
 			.addCase(fetchPizzas.rejected, state => {
-				state.pizza.pizzaLoadingStatus = 'error'
+				state.pizzaLoadingStatus = 'error'
 			})
 			.addDefaultCase(() => {})
 	},
@@ -50,9 +74,9 @@ export const pizzaSortElements = createSelector(
 
 		if (filter === 'Все') {
 			return sortPizza()
-		} else {
-			return sortPizza().filter(item => item.category === filter)
 		}
+
+		return sortPizza()?.filter(item => item.category === filter)
 	}
 )
 

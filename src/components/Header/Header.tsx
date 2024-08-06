@@ -1,10 +1,10 @@
-import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import logo from '../../assets/img/pizza-logo.svg'
+import { useAppSelector } from '../../store'
 
 const Header = () => {
-	const itemCart = useSelector(state => state.cart.cartCurentItems),
-		cartAllSum = useSelector(state => state.cart.cartAllSum)
+	const itemCart = useAppSelector(state => state.cart.cartCurentItems),
+		cartAllSum = useAppSelector(state => state.cart.cartAllSum)
 
 	return (
 		<>

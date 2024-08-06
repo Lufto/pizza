@@ -1,40 +1,50 @@
-import { useDispatch, useSelector } from 'react-redux'
+import React from 'react'
 import { Link } from 'react-router-dom'
-import { deleteCart, editCreateCard } from '../../store/CartSlise'
+import { useAppDispatch, useAppSelector } from '../../store'
+import {
+	cartItem,
+	curentObj,
+	deleteCart,
+	editCreateCard,
+} from '../../store/CartSlise'
 import CartCard from '../cartCard/cartCard'
 
-const Cart = ({ cartElement }) => {
-	const itemCart = useSelector(state => state.cart.cartCurentItems),
-		cartAllSum = useSelector(state => state.cart.cartAllSum)
+type CartProp = {
+	cartElement: cartItem[]
+}
 
-	const dispatch = useDispatch()
+const Cart: React.FC<CartProp> = ({ cartElement }) => {
+	const itemCart = useAppSelector(state => state.cart.cartCurentItems),
+		cartAllSum = useAppSelector(state => state.cart.cartAllSum)
 
-	const onCler = id => {
+	const dispatch = useAppDispatch()
+
+	const onCler = (id: string) => {
 		dispatch(deleteCart(id))
 	}
 
 	const onClerMany = () => {
-		const arr = cartElement.map(item => item.id)
+		const arr: string[] = cartElement.map(item => item.id)
 		arr.forEach(id => dispatch(deleteCart(id)))
 	}
 
-	const inc = (id, obj) => {
-		dispatch(editCreateCard({ id, obj }))
+	const inc = (id: string, curent: curentObj) => {
+		dispatch(editCreateCard({ id, curent }))
 	}
 
-	const dec = (id, obj) => {
-		dispatch(editCreateCard({ id, obj }))
+	const dec = (id: string, curent: curentObj) => {
+		dispatch(editCreateCard({ id, curent }))
 	}
 
-	const createItems = app => {
+	const createItems = (app: cartItem[]) => {
 		return app.map(({ id, ...props }) => {
 			return (
 				<CartCard
 					key={id}
 					{...props}
 					onCler={() => onCler(id)}
-					inc={obj => inc(id, obj)}
-					dec={obj => dec(id, obj)}
+					inc={curent => inc(id, curent)}
+					dec={curent => dec(id, curent)}
 				/>
 			)
 		})
